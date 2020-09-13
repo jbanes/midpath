@@ -4,6 +4,10 @@ all:
 	cp -r cdc opk/
 	cp -r dist opk/
 	
+	./install-repo.sh
+	./build-java.sh
+	cp components/core/target/midpath-0.3-SNAPSHOT.jar opk/dist/
+	
 	chmod a+x opk/launcher.sh
 	mksquashfs opk/ midpath.opk -noappend -no-xattrs
 	
@@ -14,4 +18,5 @@ all:
 
 clean:
 	rm -f midpath.opk
+	mvn -f components/core/pom.xml clean
 
