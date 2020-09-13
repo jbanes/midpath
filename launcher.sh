@@ -11,7 +11,7 @@ fi
 # TODO: Disabling dynamic home directory until MIDPath can be updated to handle dynamic home relocation
 #DIR=$HOME/.midpath
 DIR=/home/retrofw/.midpath
-VER=$DIR/20191213_1
+VER=$DIR/20200912_1
 if [ ! -f "$VER" ]; then
   rm -rf $DIR
 fi
@@ -38,8 +38,6 @@ JLP=$MIDPATH_HOME/dist
 CLASS=org.thenesis.midpath.main.MIDletLauncherSE
 
 if [ $1 = "-jar" ]; then
- echo "Parameters are [$2]"
- echo "Full command: $JAVA_CMD -Dsun.boot.library.path=${JLP} -Xbootclasspath/p:${CP}:"$2" -Xmx32M ${CLASS} -jar \"$2\""
  $JAVA_CMD -Dsun.boot.library.path=${JLP} -Xbootclasspath/p:${CP}:"$2" -Xmx32M ${CLASS} -jar "$2" 
 else
  $JAVA_CMD -Dsun.boot.library.path=${JLP} -Xbootclasspath/p:${CP}:"$1" -Xmx32M ${CLASS} "$2" "$3"
