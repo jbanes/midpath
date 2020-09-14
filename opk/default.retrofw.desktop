@@ -1,11 +1,10 @@
 [Desktop Entry]
 Name=MIDPath
 Comment=Java J2ME simulator
-Exec=launcher.sh -jar %f
+Exec=manager.sh 
 Terminal=false
 Type=Application
 StartupNotify=false
-MimeType=application/jar;
-Icon=midpath
+Icon=midpath-setup
 Categories=emulators;
 

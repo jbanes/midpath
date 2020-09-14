@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=Java J2ME
+Comment=Java J2ME simulator
+Exec=launcher.sh -jar %f
+Terminal=false
+Type=Application
+StartupNotify=false
+MimeType=application/jar;
+Icon=midpath
+Categories=emulators.systems;
+
