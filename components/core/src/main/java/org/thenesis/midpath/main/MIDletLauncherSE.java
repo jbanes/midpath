@@ -24,6 +24,13 @@ public class MIDletLauncherSE {
 
 	public static void main(String[] args) {
 		
+                System.setSecurityManager(new SecurityManager() {
+                    public void checkLink(String lib)
+                    {
+                        System.out.println("Loading native library " + lib);
+                    }
+                });
+                
 		// Load system properties required by MIDP2 and JSR specs
 		MIDletLauncherSE.callSystemPropertiesLoader();
 		

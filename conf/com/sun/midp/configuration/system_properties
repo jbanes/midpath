@@ -1,7 +1,9 @@
 javax.microedition.io.Connector.protocolpath=com.sun.midp.io
 microedition.profiles=MIDP-2.0
 microedition.configuration=CLDC-1.1
-microedition.locale=zh-CN
+#FIXME: Is it possible to toggle this based on an OS setting?
+#microedition.locale=zh-CN
+microedition.locale=en-US
 microedition.platform=MIDPATH_PHONEME_CDC
 microedition.encoding=ISO8859_1
 microedition.hostname=localhost

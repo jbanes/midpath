@@ -11,7 +11,7 @@ fi
 # TODO: Disabling dynamic home directory until MIDPath can be updated to handle dynamic home relocation
 #DIR=$HOME/.midpath
 DIR=/home/retrofw/.midpath
-VER=$DIR/20200912_1
+VER=$DIR/20200916_1
 if [ ! -f "$VER" ]; then
   rm -rf $DIR
 fi
