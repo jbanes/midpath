@@ -11,9 +11,16 @@ fi
 # TODO: Disabling dynamic home directory until MIDPath can be updated to handle dynamic home relocation
 #DIR=$HOME/.midpath
 DIR=/home/retrofw/.midpath
-VER=$DIR/20200916_1
+VER=$DIR/20200917_1
 if [ ! -f "$VER" ]; then
-  rm -rf $DIR
+  rm -rf $DIR/conf/com
+  mkdir -p $DIR
+  mkdir -p $DIR/midlets
+  mkdir -p $DIR/rms
+  cp -a conf $DIR
+#  cp dist/midpath-demos.jar $DIR/midlets/
+  touch $VER 
+  echo "Copy new configuration files"
 fi
 
 if [ ! -d "$DIR" ]; then
@@ -21,6 +28,7 @@ if [ ! -d "$DIR" ]; then
   mkdir -p $DIR/midlets
   mkdir -p $DIR/rms
   cp -a conf $DIR
+#  cp dist/midpath-demos.jar $DIR/midlets/
   touch $VER
   echo "Copy new configuration files"
 fi
