@@ -1,8 +1,8 @@
 all: prep-opk install-repo build-java
 
 prep-opk:
-	cp launcher.sh opk/
-	cp manager.sh opk/
+	cat header.sh launcher.sh > opk/launcher.sh
+	cat header.sh  manager.sh > opk/manager.sh
 	cp -r conf opk/
 	cp -r cdc opk/
 	cp -r dist opk/
