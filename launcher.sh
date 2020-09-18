@@ -9,7 +9,7 @@ fi
 CLASS=org.thenesis.midpath.main.MIDletLauncherSE
 
 if [ $1 = "-jar" ]; then
- $JAVA_CMD -Dsun.boot.library.path=${JLP} -Xbootclasspath/p:${CP}:"$2" -Xmx32M ${CLASS} -jar "$2" 
+ $JAVA_CMD -Dretrofw.home="$HOME" -Dsun.boot.library.path=${JLP} -Xbootclasspath/p:${CP}:"$2" -Xmx32M ${CLASS} -jar "$2" 
 else
- $JAVA_CMD -Dsun.boot.library.path=${JLP} -Xbootclasspath/p:${CP}:"$1" -Xmx32M ${CLASS} "$2" "$3"
+ $JAVA_CMD -Dretrofw.home="$HOME" -Dsun.boot.library.path=${JLP} -Xbootclasspath/p:${CP}:"$1" -Xmx32M ${CLASS} "$2" "$3"
 fi

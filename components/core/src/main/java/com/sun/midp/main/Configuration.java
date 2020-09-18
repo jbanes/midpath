@@ -38,9 +38,25 @@ public class Configuration {
 	}
 
 	public static void load() {
-		
+            
+                String home = System.getProperty("retrofw.home", "");
+                String key;
+                int index;
+                
 		try {
 			fileProperties.load(Configuration.class.getResourceAsStream("/com/sun/midp/configuration/configuration.cfg"));
+                        
+                        for(int i=0; i<fileProperties.size(); i++)
+                        {
+                            key = fileProperties.getKeyAt(i);
+                            index = fileProperties.getProperty(key).indexOf("$HOME");
+                            
+                            if(index >= 0)
+                            {
+                                fileProperties.setProperty(key, fileProperties.getProperty(key).substring(0, index) + home + fileProperties.getProperty(key).substring(index+5));
+                            }
+                        }
+                        
 		} catch (Exception e) {
 			if (Logging.REPORT_LEVEL <= Logging.WARNING)
 				Logging.report(Logging.WARNING, LogChannels.LC_CORE, "Can't load configuration file");

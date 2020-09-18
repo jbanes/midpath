@@ -8,10 +8,9 @@ if [ ! $MIDPATH_HOME ]; then
   MIDPATH_HOME=$(pwd)
 fi
 
-# TODO: Disabling dynamic home directory until MIDPath can be updated to handle dynamic home relocation
-#DIR=$HOME/.midpath
-DIR=/home/retrofw/.midpath
-VER=$DIR/20200917_1
+DIR=$HOME/.midpath
+VER=$DIR/20200918_1
+
 if [ ! -f "$VER" ]; then
   rm -rf $DIR/conf/com
   mkdir -p $DIR
